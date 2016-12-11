@@ -1,8 +1,7 @@
 (function(){
 	'use strict';
 
-	angular.module('LunchCheck', [])
-	.controller('LunchCheckController', LunchCheckController);
+	angular.module('LunchCheck', []).controller('LunchCheckController', LunchCheckController);
 
 	LunchCheckController.$inject = ['$scope'];
 
@@ -18,20 +17,20 @@
 
 			if ($scope.dishes) {
 				var notEmpty = function(v) { return v && v.replace(/ /g,'').length};
-				var count = $scope.dishes.split(',').filter(notEmpty).length
-				console.log(message, count)
+				var count = $scope.dishes.split(',').filter(notEmpty).length;
+				// console.log(message, count)
 
 				if (count <= 3) {
 					message = 'Enjoy!';
 				} else {
-					message = 'Too much!'
+					message = 'Too much!';
 				}
 
 				feedback = 'good';
 			}
 
 			$scope.message = message;
-			$scope.feedback = feedback
+			$scope.feedback = feedback;
 		}
 
 	}
