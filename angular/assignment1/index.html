@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+      .ui-feedback-good .message { color: green}
+      .ui-feedback-bad .message { color: red}
+      .ui-feedback-good #lunch-menu { border-color: green}
+      .ui-feedback-bad #lunch-menu { border-color: red}
+    </style>
+  </head>
+<body ng-app="LunchCheck">
+   <div class="container" ng-controller="LunchCheckController" >
+    <div class="ui-feedback-{{ feedback }}">
+       <h1>Lunch Checker</h1>
+
+           <div class="form-group">
+               <input id="lunch-menu" type="text" ng-model="dishes"
+               placeholder="List comma separated dishes you usually have for lunch.  Empty items such as ',,' will not be counted."
+               class="form-control">
+           </div>
+           <div class="form-group">
+               <button class="btn btn-default" ng-click="updateMessage()">Check If Too Much</button>
+           </div>
+           <div class="form-group message" >
+             {{message}}
+           </div>
+     </div>
+   </div>
+
+</body>
+</html>
