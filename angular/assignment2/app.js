@@ -46,6 +46,9 @@ function ShoppingListCheckOffService() {
   }, {
     name: 'Pepto Bismol',
     quantity: 10
+  }, {
+    name: 'Heathy Snack',
+    quantity: 1
   }];
 
   var bought = [];
