@@ -20,13 +20,16 @@ section div {
   margin: 10px;
   background-color: gray;
   height: 150px;
+  overflow: hidden;
 }
 
 section p {
+  margin-top: 20px;
   padding: 10px;
 }
 
 span.title {
+  font-size: 1.2em;
   position: absolute;
   top: 0;
   right: 0px;
