@@ -54,7 +54,7 @@
                 var menu_items = response.data ? response.data.menu_items : [];
 
                 if (searchTerm && menu_items) foundItems = menu_items.filter(function(obj) {
-                    return obj.name && obj.name.includes(searchTerm);
+                    return obj.name && obj.name.toLowerCase().includes(searchTerm.toLowerCase());
                 })
 
                 return foundItems;
