@@ -52,9 +52,10 @@
             }).then(function(response) {
                 var foundItems = [];
                 var menu_items = response.data ? response.data.menu_items : [];
-
+                var searchTermLC = searchTerm.toLowerCase();
+                
                 if (searchTerm && menu_items) foundItems = menu_items.filter(function(obj) {
-                    return obj.name && obj.name.toLowerCase().includes(searchTerm.toLowerCase());
+                    return obj.description && obj.description.toLowerCase().includes(searchTermLC);
                 })
 
                 return foundItems;
